@@ -7,6 +7,10 @@ function App() {
 
   const handleButtonClick = (value) => {
     if (value === "=") {
+      if (expression.trim() === "") {
+        setResult("Error: Incomplete Expression");
+        return;
+      }
       try {
         const evalResult = eval(expression);
         setResult(evalResult);
